@@ -1,0 +1,308 @@
+/* --- DEFINIÇÃO DE VARIÁVEIS DE COR --- */
+:root {
+    /* Tema Claro (Padrão) */
+    --bg-color: #f4f7f9;
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --secondary-text-color: #7f8c8d;
+    --accent-color: #3498db;
+    --card-bg-color: #ffffff;
+    --card-shadow-color: rgba(0, 0, 0, 0.08);
+    --card-hover-shadow-color: rgba(0, 0, 0, 0.12);
+    --disabled-card-bg: #e0e0e0;
+    --input-bg-color: #ffffff;
+    --input-border-color: #ccc;
+    --icon-fill-color: #7f8c8d;
+}
+
+[data-theme="dark"] {
+    /* Tema Escuro */
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --secondary-text-color: #a0a0a0;
+    --accent-color: #5dade2;
+    --card-bg-color: #1e1e1e;
+    --card-shadow-color: rgba(0, 0, 0, 0.2);
+    --card-hover-shadow-color: rgba(0, 0, 0, 0.3);
+    --disabled-card-bg: #2c2c2c;
+    --input-bg-color: #2c2c2c;
+    --input-border-color: #555;
+    --icon-fill-color: #a0a0a0;
+}
+/* -------------------------------------- */
+
+
+/* Estilos Gerais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: var(--secondary-text-color);
+    margin-bottom: 40px;
+}
+
+/* --- Novos Estilos: Pesquisa, Botão de Tema e Rodapé --- */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#search-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    font-size: 1em;
+    border-radius: 50px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.3s;
+}
+
+#search-box:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--input-border-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px var(--card-shadow-color);
+    z-index: 1000;
+}
+
+#theme-toggle svg {
+    fill: var(--text-color);
+    width: 22px;
+    height: 22px;
+}
+
+.moon-icon { display: none; }
+[data-theme="dark"] .sun-icon { display: none; }
+[data-theme="dark"] .moon-icon { display: block; }
+
+.site-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+}
+/* ---------------------------------------------------- */
+
+
+/* Estilos da Página Inicial (Cards de Categoria) */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--card-shadow-color);
+    padding: 25px;
+    width: 280px;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px var(--card-hover-shadow-color);
+}
+
+.card.disabled {
+    background-color: var(--disabled-card-bg);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.card.disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 12px var(--card-shadow-color);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+.card p {
+    text-align: left;
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Estilos das Páginas de Vídeos */
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.video-item {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--card-shadow-color);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* Estilos do Botão de Copiar */
+.video-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.video-item h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    text-align: left;
+    flex-grow: 1;
+    color: var(--heading-color);
+}
+
+.copy-link-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.copy-link-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-fill-color);
+    transition: fill 0.2s ease;
+}
+
+.copy-link-btn:hover svg {
+    fill: var(--accent-color);
+}
+
+.copy-feedback {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--heading-color);
+    color: var(--bg-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.copy-link-btn.copied .copy-feedback {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- ESTILOS ADICIONAIS PARA ÍCONES DOS CARDS --- */
+
+.card-title {
+    display: flex;
+    align-items: center; /* Alinha o ícone e o título verticalmente */
+    gap: 12px; /* Espaço entre o ícone e o título */
+    margin-bottom: 8px; /* Pequeno espaço antes do parágrafo de descrição */
+}
+
+.card-title i {
+    font-size: 1.5em; /* Tamanho do ícone */
+    color: var(--accent-color); /* Usa a cor de destaque do tema */
+    width: 28px; /* Largura fixa para manter o alinhamento consistente */
+    text-align: center;
+}
+
+.card h2 {
+    /* Remove a margem que o h2 tinha antes para não conflitar com o flexbox */
+    margin: 0; 
+}

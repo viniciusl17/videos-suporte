@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Vídeos de Ajuda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle" title="Alterar tema">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-360q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0 80q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280ZM200-440H40v-80h160v80Zm600 0H640v-80h160v80ZM440-760v-160h80v160h-80Zm0 600v-160h80v160h-80ZM256-656l-113-113 57-57 113 113-57 57Zm448 448-113-113 57-57 113 113-57 57Zm-448 0 57 57-113 113-57-57 113-113ZM656-256l57 57-113 113-57-57 113-113Z"/></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T440-660q0 116 82 198t198 82q51 0 96-25t76-65q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-125 0-212.5-87.5T360-660q0-20 3-40t8-40q-78 32-127.5 102T200-480q0 116 82 198t198 82Z"/></svg>
+    </button>
+
+    <div class="container">
+        <h1>Central de Vídeos AnotaFlix</h1>
+        <p>Selecione uma categoria abaixo ou pesquise pelo que precisa.</p>
+
+        <div class="search-container">
+            <input type="search" id="search-box" placeholder="Pesquisar por categoria, ex: 'notas fiscais'...">
+        </div>
+
+        <div class="category-container">
+            <a href="gestor-de-cardapio.html" class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h2>Desktop - Gestor de Cardápio</h2>
+                </div>
+                <p>Vídeos sobre como gerenciar itens, preços e sabores no sistema desktop.</p>
+            </a>
+
+            <a href="#" class="card disabled">
+                <div class="card-title">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <h2>Mobile - Gestor de Cardápio</h2>
+                </div>
+                <p>Vídeos sobre como gerenciar itens, preços e sabores no sistema mobile (em breve).</p>
+            </a>
+
+            <a href="#" class="card disabled">
+                <div class="card-title">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <h2>Desktop - Gestor de Pedidos</h2>
+                </div>
+                <p>Vídeos sobre como gerenciar funcionalidades do sistema desktop (em breve).</p>
+            </a>
+
+            <a href="#" class="card disabled">
+                <div class="card-title">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <h2>Mobile - Gestor de Pedidos</h2>
+                </div>
+                <p>Vídeos sobre como gerenciar funcionalidades do sistema mobile (em breve).</p>
+            </a>
+
+            <a href="impressoras.html" class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-print"></i>
+                    <h2>Impressoras</h2>
+                </div>
+                <p>Configuração e solução de problemas de impressoras.</p>
+            </a>
+
+            <a href="ga-notas-fiscais.html" class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <h2>GA - Notas Fiscais</h2>
+                </div>
+                <p>Tutoriais sobre configuração fiscal, categorias de tributos e mais.</p>
+            </a>            
+
+            <a href="#" class="card disabled">
+                <div class="card-title">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <h2>GA - Estoque</h2>
+                </div>
+                <p>Controle de estoque, entrada de notas e relatórios (em breve).</p>
+            </a>
+
+            <a href="#" class="card disabled">
+                <div class="card-title">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                    <h2>GA - Financeiro</h2>
+                </div>
+                <p>Contas a Pagar, contas a receber (em breve).</p>
+            </a>            
+        </div>
+        <p id="no-results-message" style="display: none; margin-top: 40px;">Nenhuma categoria encontrada.</p>
+    </div>
+
+    <footer class="site-footer">
+        Produzido por Vinicius Leal
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
