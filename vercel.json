@@ -1,3 +1,16 @@
 {
-  "public": true
+  "rewrites": [
+    {
+      "source": "/impressoras",
+      "destination": "/Impressoras.html"
+    },
+    {
+      "source": "/ga-notas-fiscais",
+      "destination": "/ga-notas-fiscais.html"
+    },
+    {
+      "source": "/gestor-de-cardapio",
+      "destination": "/gestor-de-cardapio.html"
+    }
+  ]
 }
